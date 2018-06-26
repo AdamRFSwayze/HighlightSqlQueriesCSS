@@ -4,6 +4,8 @@
 var columns = ['column1', 'column2', 'column3', 'column4'];
 
 
+var schemas = [];
+
 
 
 
@@ -27,10 +29,20 @@ function updateSQLCode(code){
 
     for (var i=0 ; i < code.length; i++){
         if (code[i] === '\''){
-            stringIdentifierIndices.push(i+1)
+            stringIdentifierIndices.push(i)
         } 
     }
-    console.log(stringIdentifierIndices);
+
+    for(var i=0; i < stringIdentifierIndices.length;i++){
+        if(i % 2 === 0){
+            code = code.slice(0, stringIdentifierIndices[i]) + '<span class="String">\'' + code.slice( stringIdentifierIndices[i]+1)
+        }
+        if(i % 2 === 1){
+            code = code.slice(0, stringIdentifierIndices[i]) + '</span> + code.slice( stringIdentifierIndices[i]+1)
+        }
+
+    } 
+    console.log(code);
     return code
 }
 
