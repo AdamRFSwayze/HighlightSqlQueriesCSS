@@ -9,6 +9,7 @@ var columns = ['column1', 'column2', 'column3', 'column4'];
 
 
 function updateSQLCode(code){
+
     var myKeyWords = ['SELECT', 'FROM', 'WHERE', 'WITH', 'AND', 'OR', 'GROUP BY', 'DISTINCT'];
     myKeyWords.map((word) => {
         code = code.replace(new RegExp(word, 'g'), '<span class="keyWord">' + word + '</span>')
@@ -21,6 +22,15 @@ function updateSQLCode(code){
     columns.map((word) => {
         code = code.replace(new RegExp(word, 'g'), '<span class="tableColumns">' + word + '</span>')
     })
+
+    var stringIdentifierIndices = [];
+
+    for (var i=0 ; i < code.length; i++){
+        if (code[i] === '\''){
+            stringIdentifierIndices.push(i+1)
+        } 
+    }
+    console.log(stringIdentifierIndices);
     return code
 }
 
