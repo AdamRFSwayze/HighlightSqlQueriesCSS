@@ -27,7 +27,6 @@ function updateSQLCode(code){
 
     code = code.replace(new RegExp(/(\'[\w\s]+\')/, 'g'), '<span class="String">' + '$&' + '</span>')
 
-    console.log(code);
     return code
 }
 

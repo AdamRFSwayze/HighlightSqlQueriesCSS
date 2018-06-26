@@ -1,4 +1,4 @@
-An more personal alternative to other, more extensive syntax highlighters, for SQL code blocks. Specify your schemas, tables, columns, and any packages or functions that you want colored. Specify the colors you prefer for everything. Simple code, simple customization. 
+An more personal alternative to other, more extensive syntax highlighters, for SQL code blocks. Specify your schemas, tables, columns, and any packages or functions that you want colored. Specify the colors you prefer for everything. Simple code, simple customization. Highlight as much or as little as you want.
 
 
 Example: 
