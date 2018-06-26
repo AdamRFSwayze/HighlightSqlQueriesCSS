@@ -25,23 +25,8 @@ function updateSQLCode(code){
         code = code.replace(new RegExp(word, 'g'), '<span class="tableColumns">' + word + '</span>')
     })
 
-    var stringIdentifierIndices = [];
+    code = code.replace(new RegExp(/(\'[\w\s]+\')/, 'g'), '<span class="String">' + '$&' + '</span>')
 
-    for (var i=0 ; i < code.length; i++){
-        if (code[i] === '\''){
-            stringIdentifierIndices.push(i)
-        } 
-    }
-
-    for(var i=0; i < stringIdentifierIndices.length;i++){
-        if(i % 2 === 0){
-            code = code.slice(0, stringIdentifierIndices[i]) + '<span class="String">\'' + code.slice( stringIdentifierIndices[i]+1)
-        }
-        if(i % 2 === 1){
-            code = code.slice(0, stringIdentifierIndices[i]) + '</span> + code.slice( stringIdentifierIndices[i]+1)
-        }
-
-    } 
     console.log(code);
     return code
 }
