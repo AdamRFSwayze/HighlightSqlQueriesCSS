@@ -9,7 +9,7 @@ Example:
 SELECT column1, column2, column3, COUNT(DISTINCT column4)  
 FROM myTable 
 WHERE column1 = 'someValue' 
-GROUP BY column1, column2, column3    
+GROUP BY column1, column2, column3;    
 ```
 
 ## After
